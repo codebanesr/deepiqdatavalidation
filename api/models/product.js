@@ -7,6 +7,8 @@ const productSchema = mongoose.Schema({
     Score : {type:String, required: true }
 });
 
+// We dont export productSchema rather we export a model of productSchema,what that means is that we are actually exporting an instance of productSchema
+
 module.exports = mongoose.model('Product', productSchema);
 
 

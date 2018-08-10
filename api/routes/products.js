@@ -4,11 +4,16 @@ const mongoose = require("mongoose");
 
 const Product = require("../models/product");
 
+
+
+// db.collection.find(query, projection)  - query	document	Optional. Specifies selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}). projection	document	Optional. Specifies the fields to return in the documents that match the query filter. To return all fields in the matching documents, omit this parameter.
+
+// Select is used to filter out columns from the database result, we can also use projection but its fine this way
 router.get("/", (req, res, next) => {
   console.log("in products")
   Product.find()
-    .select("Rule Tests _id")
-    .exec()
+    .select("Rule Tests _id Score")
+    .exec()   //  this will execute the previous statement and return a promise on which we can then apply our callbacks
     .then(docs => {
       const response = {
         count: docs.length,
