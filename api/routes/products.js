@@ -4,6 +4,12 @@ const mongoose = require("mongoose");
 
 const Product = require("../models/product");
 
+<<<<<<< HEAD
+router.get("/", (req, res, next) => {
+  Product.find()
+    .select("name price _id")
+    .exec()
+=======
 
 
 // db.collection.find(query, projection)  - query	document	Optional. Specifies selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}). projection	document	Optional. Specifies the fields to return in the documents that match the query filter. To return all fields in the matching documents, omit this parameter.
@@ -14,14 +20,20 @@ router.get("/", (req, res, next) => {
   Product.find()
     .select("Rule Tests _id Score")
     .exec()   //  this will execute the previous statement and return a promise on which we can then apply our callbacks
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
     .then(docs => {
       const response = {
         count: docs.length,
         products: docs.map(doc => {
           return {
+<<<<<<< HEAD
+            name: doc.name,
+            price: doc.price,
+=======
             Rule: doc.Rule,
             Tests: doc.Tests,
             Score: doc.Score,
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
             _id: doc._id,
             request: {
               type: "GET",
@@ -47,12 +59,19 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+<<<<<<< HEAD
+  const product = new Product({
+    _id: new mongoose.Types.ObjectId(),
+    name: req.body.name,
+    price: req.body.price
+=======
   console.log(req.body);
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
     Rule: req.body.Rule,
     Tests: req.body.Tests,
     Score : req.body.Score
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
   });
   product
     .save()
@@ -61,9 +80,14 @@ router.post("/", (req, res, next) => {
       res.status(201).json({
         message: "Created product successfully",
         createdProduct: {
+<<<<<<< HEAD
+            name: result.name,
+            price: result.price,
+=======
             Rule: result.Rule,
             Tests: result.Tests,
             Score: result.Score,
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
             _id: result._id,
             request: {
                 type: 'GET',
@@ -83,7 +107,11 @@ router.post("/", (req, res, next) => {
 router.get("/:productId", (req, res, next) => {
   const id = req.params.productId;
   Product.findById(id)
+<<<<<<< HEAD
+    .select('name price _id')
+=======
     .select('Rule Tests _id')
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
     .exec()
     .then(doc => {
       console.log("From database", doc);
@@ -111,7 +139,11 @@ router.patch("/:productId", (req, res, next) => {
   const id = req.params.productId;
   const updateOps = {};
   for (const ops of req.body) {
+<<<<<<< HEAD
+    updateOps[ops.propName] = ops.value;
+=======
     updateOps[ops.propRule] = ops.value;
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
   }
   Product.update({ _id: id }, { $set: updateOps })
     .exec()
@@ -142,7 +174,11 @@ router.delete("/:productId", (req, res, next) => {
           request: {
               type: 'POST',
               url: 'http://localhost:3000/products',
+<<<<<<< HEAD
+              body: { name: 'String', price: 'Number' }
+=======
               body: { Rule: 'String', Tests: 'Number', Score:'String' }
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
           }
       });
     })

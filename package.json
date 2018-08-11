@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
+  "name": "rest-shop",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API Tutorial Project (Build a simple shop API)",
+=======
   "name": "datavalidation",
   "version": "1.0.0",
   "description": "Built for deepiq web services to serve an endpoint for angular application",
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +18,11 @@
     "restful",
     "api"
   ],
+<<<<<<< HEAD
+  "author": "Maximilian Schwarzmüller",
+=======
   "author": "Shanur Rahman",
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -21,7 +31,10 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
     "axios": "^0.18.0",
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
     "nodemon": "^1.12.1"
   }
 }

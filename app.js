@@ -7,6 +7,10 @@ const mongoose = require("mongoose");
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
+<<<<<<< HEAD
+mongoose.connect(
+  "YOUR_DB_URL",
+=======
 
 // mongoose.connect(
 //   "mongodb://shanur:"+process.env.MONGO_ATLAS_PW+"@datavalidationcluster-shard-00-00-uebbc.mongodb.net:27017,datavalidationcluster-shard-00-01-uebbc.mongodb.net:27017,datavalidationcluster-shard-00-02-uebbc.mongodb.net:27017/test?ssl=true&replicaSet=datavalidationcluster-shard-0&authSource=admin&retryWrites=true",
@@ -18,6 +22,7 @@ const orderRoutes = require("./api/routes/orders");
 
 mongoose.connect(
   "mongodb://shanur:pass123@ds117422.mlab.com:17422/datavalidation",
+>>>>>>> c0d96c82387eafe26b5e2eba6e6d1e084c759efd
   {
     useMongoClient: true
   }
